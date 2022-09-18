@@ -1,0 +1,57 @@
+<div>
+  <app-task-creator-component (newItemEvent)="addItem($event)">
+  </app-task-creator-component>
+
+  <div class="row">
+    <!-- <form (submit)="addTodo()">
+      <input type="text" name="new-todo" [(ngModel)]="formModel.newTodo" placeholder="Nowe zadanie">
+      <button>Dodaj</button>
+    </form> -->
+  </div>
+
+  <app-tasks-counter-component
+  [typeoftasks]="type2"
+  [remainingValue]="currentRemainingTasksValue"
+  [compleatedValue]="currentCompletedTasksValue"
+></app-tasks-counter-component>
+
+  <app-tasks-list-component
+    [kindOfTasks]="type2"
+    [currentRemainingTasks]="remainingTasks"
+    (sendingTaskEvent)="updateTasks($event)"
+  >
+  </app-tasks-list-component>
+  <!-- <p>
+    Do zrobienia ({{ remainingTasks.length }} /
+    {{ remainingTasks.length + completedTasks.length }}):
+  </p>
+  <ul>
+    <li *ngFor="let task of remainingTasks">
+      <span>{{ task.name }}</span>
+      <button (click)="moveToCompleted(task)">Ukończono</button>
+    </li>
+  </ul> -->
+
+  <app-tasks-counter-component
+    [typeoftasks]="type1"
+    [remainingValue]="currentRemainingTasksValue"
+    [compleatedValue]="currentCompletedTasksValue"
+  ></app-tasks-counter-component>
+
+  <app-tasks-list-component
+    [kindOfTasks]="type1"
+    [currentCompletedTasks]="completedTasks"
+    (sendingTaskEvent)="updateTasks($event)"
+  >
+  </app-tasks-list-component>
+  <!-- <p>
+    Ukończone ({{ completedTasks.length }} /
+    {{ remainingTasks.length + completedTasks.length }}):
+  </p>
+  <ul>
+    <li *ngFor="let task of completedTasks">
+      <span class="task-done">{{ task.name }}</span>
+      <button (click)="moveToRemaining(task)">Do zrobienia</button>
+    </li>
+  </ul> -->
+</div>

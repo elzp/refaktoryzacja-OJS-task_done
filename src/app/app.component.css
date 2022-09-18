@@ -1,0 +1,40 @@
+p, span, li, button {
+  font-family: Lato;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+li > span {
+  display: inline-block;
+  width: 500px;
+  background: #ffe558;
+  color: #503939;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+li > .task-done {
+  background: #333;
+  color: white;
+}
+
+button {
+  font-size: 16px;
+  margin: 0 10px;
+  background: none;
+  border-radius: 5px;
+}
+
+input {
+  padding: 3px 10px;
+  width: 520px;
+  border: 1px solid rgb(63, 63, 63);
+}
